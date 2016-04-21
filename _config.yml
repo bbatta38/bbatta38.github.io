@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            bbatta
+tagline:          'Front-end developer'
+description:      'Front-end developer'
+url:              https://bbatta38.github.io
+baseurl:          /
+
+author:
+  name:           'bbatta'
+  url:            https://www.facebook.com/bbatta38
+
+paginate:         1
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/bbatta38
+
+
+#Gems
+gems:             [jekyll-paginate]
