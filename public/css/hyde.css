@@ -17,6 +17,7 @@
 /*
  * Contents
  *
+ * Import font
  * Global resets
  * Sidebar
  * Container
@@ -24,6 +25,12 @@
  * Themes
  */
 
+/*
+*
+* Import font 
+* noto sans Korean
+*/
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 /*
  * Global resets
@@ -32,7 +39,7 @@
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Noto Sans KR", Helvetica, Arial, sans-serif;
 }
 @media (min-width: 48em) {
   html {
