@@ -16,7 +16,7 @@ author:
   name:           'bbatta'
   url:            https://www.facebook.com/bbatta38
 
-paginate:         1
+paginate:         15
 
 # Custom vars
 version:          2.1.0
