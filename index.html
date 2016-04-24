@@ -5,17 +5,16 @@ comments: true
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
+  <ul>
+    {% for post in paginator.posts %}
+    <li class="posts-list">
+      <a class="list-title" href="{{ post.url }}">
         {{ post.title }}
       </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-  </div>
-  {% endfor %}
+      <span class="post-date">{{ post.date | date_to_string }}</span>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <div class="pagination">

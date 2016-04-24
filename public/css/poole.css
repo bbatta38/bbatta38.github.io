@@ -41,12 +41,6 @@
           box-sizing: border-box;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -376,6 +370,9 @@ tbody tr:nth-child(odd) th {
 .related-posts li a:hover small {
   color: inherit;
 }
+.posts-list {margin:0; padding:20px 0; padding-left:0; border-top:1px solid #ccc; list-style:none}
+.posts-list:first-child {border:none}
+.list-title {display:block; font-size:40px; margin-bottom:10px; font-weight:bold}
 
 
 /*
