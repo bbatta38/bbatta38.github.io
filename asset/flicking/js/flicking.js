@@ -19,15 +19,15 @@
             if(isMoveArr[arrList.indexOf(this)]){
                 isMoveArr[arrList.indexOf(this)] = false;
 
-                //this.children[0].style.left = '0px';
-                //this.children[1].children[0].style.width = '0px';
-                //this.children[1].children[1].style.width = '0px';
+                this.children[0].style.left = '0px';
+                this.children[1].children[0].style.width = '0px';
+                this.children[1].children[1].style.width = '0px';
             }else{
                 isMoveArr[arrList.indexOf(this)] = true;
-                //this.className ="list-item transition-item";
-                //this.children[0].style.left = String(-1 * (120)) + 'px';
-                //this.children[1].children[0].style.width = String(120 / 2) + 'px';
-                //this.children[1].children[1].style.width = String(120 / 2) + 'px';
+                this.className ="list-item transition-item";
+                this.children[0].style.left = String(-1 * (120)) + 'px';
+                this.children[1].children[0].style.width = String(120 / 2) + 'px';
+                this.children[1].children[1].style.width = String(120 / 2) + 'px';
             }
         });
         // arrList[i].addEventListener('touchstart', function(e) {
