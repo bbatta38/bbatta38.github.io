@@ -21,12 +21,22 @@ a {text-decoration:none; color:#333}
   -o-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0); 
   -webkit-user-select:none}
-.list .list-item .list-content {padding:10px; padding-right:90px; position:relative; left:0px; width:100%}
+.list .list-item .list-content {padding:10px; padding-right:90px; position:relative; left:0px; width:100%; -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-user-select:none}
 .list .list-item .list-item-title a {font-size:1.2rem; line-height:1.4rem; font-weight:bold}
 .list .list-item .list-item-sub {position:absolute; top:50%; right:10px; margin-top:-0.4rem; font-size:0.8rem}
 .list .list-item .list-btns {position:absolute; right:0; top:0; width:140px; height:100%; overflow:hidden; text-align:right}
-.list .list-item .list-btns button {display:inline-block; padding:5px 0px; width:0; border:none; height:100%; overflow:hidden; color:#fff; outline:none}
+.list .list-item .list-btns button {display:inline-block; padding:5px 0px; width:0; border:none; height:100%; overflow:hidden; color:#fff; outline:none; -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-user-select:none}
 .list .list-item .list-btns .edit-btn {background-color:#8888ff}
 .list .list-item .list-btns .delete-btn {background-color:#ff0000}
-.list .list-item.transition-item .list-btns button {transition:width .4s, padding .4s ease}
-.list .list-item.transition-item .list-content {transition:left .4s ease}
+.list .list-item.transition-item .list-btns button {transition:width .4s, padding .4s ease; transform:scaleX(60);}
+.list .list-item.transition-item .list-content {transition:left .4s ease; transform:translate(-120px, 0)}
