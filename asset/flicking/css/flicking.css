@@ -11,7 +11,7 @@ a {text-decoration:none; color:#333}
 /* elements */
 .list {width:100%; font-size:0}
 .list .list-item {position:relative; list-style:none; box-sizing:border-box; width:100%; overflow:hidden; border-bottom:1px solid #bcbcef}
-.list .list-item .list-content {padding:10px; padding-right:90px; position:relative; left:0px; width:100%}
+.list .list-item .list-content {padding:10px; padding-right:90px; position:relative; left:0px; width:100%; -webkit-user-select:none}
 .list .list-item .list-item-title a {font-size:1.2rem; line-height:1.4rem; font-weight:bold}
 .list .list-item .list-item-sub {position:absolute; top:50%; right:10px; margin-top:-0.4rem; font-size:0.8rem}
 .list .list-item .list-btns {position:absolute; right:0; top:0; width:140px; height:100%; overflow:hidden; text-align:right}
