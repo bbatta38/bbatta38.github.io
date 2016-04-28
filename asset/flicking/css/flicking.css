@@ -18,5 +18,5 @@ a {text-decoration:none; color:#333}
 .list .list-item .list-btns button {display:inline-block; padding:5px 0px; width:0; border:none; height:100%; overflow:hidden; color:#fff; outline:none}
 .list .list-item .list-btns .edit-btn {background-color:#8888ff}
 .list .list-item .list-btns .delete-btn {background-color:#ff0000}
-.list .list-item.transition-item .list-btns button {transition:width .2s, padding .2s; transform:translate3d(0, 0, 0)}
-.list .list-item.transition-item .list-content {transition:left .2s; transform:translate3d(0, 0, 0)}
+.list .list-item.transition-item .list-btns button {transition:width .2s, padding .2s; -webkit-transform: translateZ(0);}
+.list .list-item.transition-item .list-content {transition:left .2s; -webkit-transform: translateZ(0);}
