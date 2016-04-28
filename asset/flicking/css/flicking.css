@@ -38,5 +38,5 @@ a {text-decoration:none; color:#333}
   -webkit-user-select:none}
 .list .list-item .list-btns .edit-btn {background-color:#8888ff}
 .list .list-item .list-btns .delete-btn {background-color:#ff0000}
-.list .list-item.transition-item .list-btns button {transition:width .4s, padding .4s ease; transform:scaleX(60);}
-.list .list-item.transition-item .list-content {transition:left .4s ease; transform:translate(-120px, 0)}
+.list .list-item.transition-item .list-btns button {transition:width .4s, padding .4s ease}
+.list .list-item.transition-item .list-content {transition:left .4s ease}
