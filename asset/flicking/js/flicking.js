@@ -88,7 +88,6 @@ Flicking.prototype.move = function($target, $isEnd){
             this.moveX = this.btnWidth + 20;
         }
     }
-    console.log($target.querySelector('.list-btns'));
     $target.querySelector('.list-btns').style.transform = 'translate3d(0, 0, 0) scaleX(' + (this.moveX / this.btnWidth) + ')';
     //$target.querySelector('.edit-btn').style.width = String(this.moveX / 2) + 'px';
     //$target.querySelector('.delete-btn').style.width = String(this.moveX / 2) + 'px';
