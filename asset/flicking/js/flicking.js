@@ -79,7 +79,8 @@ Flicking.prototype.move = function($target, $isEnd){
             this.moveX = 0;
         }
     }
-    $target.querySelector('.list-content').style.left = String(-this.moveX) + 'px';
+    $target.querySelector('.list-content').style.transform = 'translate3d(' + (-this.moveX) + 'px, 0, 0)'; 
+    //$target.querySelector('.list-content').style.left = String(-this.moveX) + 'px';
     if(!$isEnd){
         if(this.moveX < 0) {
         this.moveX = 0;
@@ -87,8 +88,10 @@ Flicking.prototype.move = function($target, $isEnd){
             this.moveX = this.btnWidth + 20;
         }
     }
-    $target.querySelector('.edit-btn').style.width = String(this.moveX / 2) + 'px';
-    $target.querySelector('.delete-btn').style.width = String(this.moveX / 2) + 'px';
+    console.log($target.querySelector('.list-btns'));
+    $target.querySelector('.list-btns').style.transform = 'translate3d(0, 0, 0) scaleX(' + (this.moveX / this.btnWidth) + ')';
+    //$target.querySelector('.edit-btn').style.width = String(this.moveX / 2) + 'px';
+    //$target.querySelector('.delete-btn').style.width = String(this.moveX / 2) + 'px';
 };
 
 (function(window) {
