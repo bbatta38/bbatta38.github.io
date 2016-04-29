@@ -1,83 +1,105 @@
 'use strict';
 
-(function(w){
-    var list = document.querySelectorAll('.list-item'),
-        length = list.length,
-        i = 0,
-        startX = 0,
+var Flicking = function() {
+}
+
+Flicking.prototype.init = function($obj){
+    var startX = 0,
         currentX = 0,
         isMoveArr = [],
         arrList = [],
-        moveX = 0,
-        btnWidth = 120,
-        elasticsWidth = 40;
-    for(; i < length; i++){
-        arrList[i] = list[i];
-        isMoveArr.push(false);
-        arrList[i].addEventListener('click', function(e){
-            this.className ="list-item transition-item";
-            if(isMoveArr[arrList.indexOf(this)]){
-                isMoveArr[arrList.indexOf(this)] = false;
+        i = 0,
+        elasticsWidth = $obj.elastic,
+        _self = this,
+        isMove = false;
 
-                this.children[0].style.left = '0px';
-                this.children[1].children[0].style.width = '0px';
-                this.children[1].children[1].style.width = '0px';
-            }else{
-                isMoveArr[arrList.indexOf(this)] = true;
-                this.className ="list-item transition-item";
-                this.children[0].style.left = String(-1 * (120)) + 'px';
-                this.children[1].children[0].style.width = String(120 / 2) + 'px';
-                this.children[1].children[1].style.width = String(120 / 2) + 'px';
-            }
-        });
-        // arrList[i].addEventListener('touchstart', function(e) {
-        //     this.className = 'list-item';
-        //     startX = e.changedTouches[0].pageX;
-        // }, false);
-
-        // arrList[i].addEventListener('touchmove', function(e) {
-        //     currentX = e.changedTouches[0].pageX;
-        //     if(isMoveArr[arrList.indexOf(e.currentTarget)]) {
-        //         moveX = btnWidth - (currentX - startX);
-        //     }else{
-        //         moveX = startX - currentX;
-        //     }
-
-        //     if(moveX > btnWidth + elasticsWidth) {
-        //         moveX = btnWidth + elasticsWidth;
-        //     } else if(moveX < -elasticsWidth) {
-        //         moveX = -elasticsWidth;
-        //     }
-
-        //     this.children[0].style.left = String(-moveX) + 'px';
-        //     if(moveX < 0) {
-        //         moveX = 0;
-        //     }else if(moveX > btnWidth + 20) {
-        //         moveX = btnWidth + 20;
-        //     }
-        //     this.children[1].children[0].style.width = String(moveX / 2) + 'px';
-        //     this.children[1].children[1].style.width = String(moveX / 2) + 'px';
-        // }, false);
-
-        // arrList[i].addEventListener('touchend', function(e) {
-        //     this.className ="list-item transition-item";
-        //     if(moveX >= btnWidth / 2){
-        //         moveX = btnWidth;
-        //     }else{
-        //         moveX = 0;
-        //     }
-        //     this.children[0].style.left = String(-1 * (moveX)) + 'px';
-        //     this.children[1].children[0].style.width = String(moveX / 2) + 'px';
-        //     this.children[1].children[1].style.width = String(moveX / 2) + 'px';
-        // }, false);
-
-        // arrList[i].addEventListener('transitionend', function(e) {
-        //     if(moveX === btnWidth) {
-        //         isMoveArr[arrList.indexOf(e.currentTarget)] = true;
-        //     }else{
-        //         isMoveArr[arrList.indexOf(e.currentTarget)] = false;
-        //     }
-        //     this.className = 'list-item';
-        // });
+    this.wrapper = $obj.wrapper;
+    if(this.wrapper){
+        this.list = document.querySelectorAll('.' + $obj.wrapper + ' .' + $obj.container);
+    }else{
+        this.list = document.querySelectorAll('.' + $obj.container);
     }
+    this.length = this.list.length;
+    this.moveX = 0;
+    this.btnWidth = $obj.btnWidth;
+
+    for(; i < this.length; i++) {
+        var _list;
+        arrList[i] = this.list[i];
+        _list = arrList[i];
+        isMoveArr[i] = false;
+        _list.no = i;
+        _list.addEventListener('touchstart', function(e) {
+            this.className = $obj.container;
+            startX = e.changedTouches[0].pageX;
+        }, false);
+
+        _list.addEventListener('touchmove', function(e) {
+            currentX = e.changedTouches[0].pageX;
+            if(isMoveArr[this.no]) {
+                _self.moveX = _self.btnWidth - (currentX - startX);
+            }else{
+                _self.moveX = startX - currentX;
+            }
+
+            if(_self.moveX > _self.btnWidth + elasticsWidth) {
+                _self.moveX = _self.btnWidth + elasticsWidth;
+            } else if(_self.moveX < -elasticsWidth) {
+                _self.moveX = -elasticsWidth;
+            }
+
+            _self.move(this, false);
+            isMove = true;
+        }, false);
+
+        _list.addEventListener('touchend', function(e) {
+            if(isMove){
+                this.className = $obj.container + ' ' + $obj.transitionClass;
+                _self.move(this, true);
+            }
+            isMove = false;
+        }, false);
+
+        _list.addEventListener('transitionend', function(e) {
+            if(_self.moveX === _self.btnWidth) {
+                isMoveArr[this.no] = true;
+            }else{
+                isMoveArr[this.no] = false;
+            }
+            this.className = $obj.container;
+        });
+    }
+};
+
+Flicking.prototype.move = function($target, $isEnd){
+    if($isEnd){
+        if(this.moveX >= this.btnWidth / 2){
+            this.moveX = this.btnWidth;
+        }else{
+            this.moveX = 0;
+        }
+    }
+    $target.querySelector('.list-content').style.transform = 'translate3d(' + (-this.moveX) + 'px, 0, 0)'; 
+    //$target.querySelector('.list-content').style.left = String(-this.moveX) + 'px';
+    if(!$isEnd){
+        if(this.moveX < 0) {
+        this.moveX = 0;
+        }else if(this.moveX > this.btnWidth + 20) {
+            this.moveX = this.btnWidth + 20;
+        }
+    }
+    $target.querySelector('.list-btns').style.transform = 'translate3d(0, 0, 0) scaleX(' + (this.moveX / this.btnWidth) + ')';
+    //$target.querySelector('.edit-btn').style.width = String(this.moveX / 2) + 'px';
+    //$target.querySelector('.delete-btn').style.width = String(this.moveX / 2) + 'px';
+};
+
+(function(window) {
+    var flicking = new Flicking();
+    flicking.init({
+        wrapper:'list',
+        container: 'list-item',
+        transitionClass: 'transition-item',
+        btnWidth: 120,
+        elastic: 40
+    });
 })(window);
