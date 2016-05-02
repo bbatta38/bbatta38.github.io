@@ -7,7 +7,6 @@ Flicking.prototype.init = function($obj){
     var startX = 0,                     // 시작 x 좌표
         currentX = 0,                   // move 중 x 좌표
         isMoveArr = [],                 // 펼쳐져 있는지 닫혀있는지 boolean값
-        arrList = [],                   // list 배열
         i = 0,                          // for문 돌릴 i
         elasticsWidth = $obj.elastic,   // 탄력값
         _self = this,                   
