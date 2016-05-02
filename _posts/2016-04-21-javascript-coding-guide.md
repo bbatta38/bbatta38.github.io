@@ -2,6 +2,8 @@
 layout: post
 title: 자바스크립트 코딩가이드
 comments: true
+categories:
+- Javascript
 ---
 
 ### 전역변수 최소화

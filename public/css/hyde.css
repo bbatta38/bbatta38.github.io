@@ -125,6 +125,14 @@ a.sidebar-nav-item:focus {
   }
 }
 
+.sidebar .category-title {margin:0}
+
+.sidebar .category-list {position:relative}
+@media (max-width: 48em) {
+  .sidebar .category-list {padding:0}
+  .sidebar .category-list li {list-style:none; padding:0}
+}
+
 
 /* Container
  *
