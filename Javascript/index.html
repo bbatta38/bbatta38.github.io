@@ -1,0 +1,12 @@
+---
+layout: page
+title: Javscript
+---
+
+<ul>
+  {% for post in site.categories.Javascript %}
+    {% if post.url %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
