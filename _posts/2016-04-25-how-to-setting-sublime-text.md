@@ -67,7 +67,7 @@ Sublime Text는 기본적으로 utf-8 인코딩만 제공하지만 convertToUTF8
 >
 > - Chinese Simplified(GBK) 중국어 간체
 > - Chinese Traditional(BIG5) 중국어 번체
-> - Korean (EUC-KR) CP949 도
+> - Korean (EUC-KR) CP949
 > - Japanese (CP932)
 > - Japanese (Shift_JIS)
 > - Japanese (EUC-JP)
