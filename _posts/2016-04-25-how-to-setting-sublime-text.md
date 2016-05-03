@@ -3,7 +3,7 @@ layout: post
 title: Sublime Text 설치 및 플러그인 정리
 comments: true
 categories:
-- etc
+- ETC
 ---
 
 Sublime Text를 설치하고 세팅할때마다 다른 블로그를 검색해야 하는 불편함을 해소하기 위해 포스팅하려고 합니다. 개인 저장용이기는 하나 참고하실 분들은 참고 하셔도 좋습니다. 설치버전은 Sublime Text3 기준이고 OS는 OS X 기준입니다.
