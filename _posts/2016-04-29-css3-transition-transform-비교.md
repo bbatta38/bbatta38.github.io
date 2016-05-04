@@ -8,9 +8,9 @@ categories:
 
 실무에서 모션 작업은 항상 자바스크립트로만 처리해 왔던터라(크로스 브라우징 이슈때문에...) 잉여시간이 남아 css transition에 대해서 공부를 하고 있었는데, ```left```를 이용하여 모션을 주었더니 웹에서는 끊김없이 잘 보였었는데 모바일에서는 뭔가 좀 끊기는 느낌이 들어 방법이 없을까 생각하다가 ```transform:translate```를 이용하니 모션이 부드럽게 처리가 됐었다. 왜 이렇게 퍼포먼스에 큰 차이를 보이는지 이유를 알아보기로 하였다.
 
-```left```를 이용한 방식은 [이곳](http://jsfiddle.net/qcb2zc5b/){:target="_blank"}을 ```transform:translate```를 이용한 방식은 [이곳](http://jsfiddle.net/qcb2zc5b/1/){:target="_blank"}을 클릭하여 확인해보기 바란다.
+```left```를 이용한 방식은 [이곳](http://jsfiddle.net/qcb2zc5b/embed/result/){:target="_blank"}을 ```transform:translate```를 이용한 방식은 [이곳](http://jsfiddle.net/qcb2zc5b/1/embed/result/){:target="_blank"}을 클릭하여 확인해보기 바란다.
 
-> 웹에서는 많이 차이가 나지 않을수 있으니 모바일 모드로 실행화면 보기를 추천한다.
+> 웹에서는 많이 차이가 나지 않을수 있으니 모바일로 보기를 추천한다.
 
 퍼포먼스의 차이는 크롬 개발자 도구를 사용하여 쉽게 알아볼 수 있었다.  
 먼저 ```left```를 이용하여 모션을 구현했을 때의 Timeline 모습이다. 총 5.4초의 시간동안 모션이 이루어졌고 Rendering 시간은 247.9 ms, Painting 시간은 292.6 ms 걸렸다.  
