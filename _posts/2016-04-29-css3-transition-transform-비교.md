@@ -55,8 +55,3 @@ categories:
 
 [^1]: 출처 : <http://www.slideshare.net/JinKyoungHeo/1-2-53043752>{:target="_blank"}
 [^2]: Document Object Model
-
-
-```
-ps. 교정 피드백 환영합니다^^
-```
